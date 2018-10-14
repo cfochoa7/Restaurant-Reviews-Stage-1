@@ -25,7 +25,8 @@ let urls = [
 /*The addEventListener will install cache storage with the selected files.
 The function will wait until the caches open and will then pass the 'urls' in the the cache storage.
 note--further research has suggested that the longer the list of files included in the 'urls' has a higher chance of failing to cache
-No experience with this so far.*/
+No experience with this so far.
+https://developers.google.com/web/fundamentals/primers/service-workers*/
 self.addEventListener('install', function(event) {
   event.waitUntil(caches.open(cacheName).then(function(cache) {
   console.log('opened');
@@ -36,7 +37,9 @@ self.addEventListener('install', function(event) {
 
 /*The addEventListener will will return the specific cache request and display it on the web page.
 The 'fetch' will look in the cache storage and will match the appropriate request.
-This varies depending if the webpage was visited before any offline activity in order to record the cache.*/
+This varies depending if the webpage was visited before any offline activity in order to record the cache.
+https://developers.google.com/web/fundamentals/primers/service-workers*/
+
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
