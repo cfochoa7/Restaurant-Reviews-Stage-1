@@ -43,7 +43,10 @@
 
 
   <script type="text/javascript">
-/*Installs and registers the serviceWorker in order to set up and record the cache */
+    
+/*Installs and registers the serviceWorker in order to set up and record the cache 
+'Udacity: Front End Web Development | Front End Applications | Lesson 13: Introducing the ServiceWorker' */
+    
   if("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js").then(function(registration) {
       console.log('Good to go');
