@@ -27,6 +27,7 @@ The function will wait until the caches open and will then pass the 'urls' in th
 note--further research has suggested that the longer the list of files included in the 'urls' has a higher chance of failing to cache
 No experience with this so far.
 https://developers.google.com/web/fundamentals/primers/service-workers*/
+
 self.addEventListener('install', function(event) {
   event.waitUntil(caches.open(cacheName).then(function(cache) {
   console.log('opened');
