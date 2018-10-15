@@ -299,4 +299,12 @@ nav h1 a {
  }
  #restaurant-container, #reviews-container {
 	 width: 100%;
+	 margin-left: 60px;
  }
+ .inside #footer {
+     width: 100%;
+   }
+ #breadcrumb {
+ 	width: 100%;
+ }
+
