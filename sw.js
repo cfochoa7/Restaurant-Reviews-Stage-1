@@ -11,7 +11,7 @@ let urls = [
   '/js/restaurant_info.js',
   '/data/restaurants.json',
 
-  /*The .js & .css takes in the locations markers' name from the mapAPI and will display unrenderd images when offline*/
+  /*The .js & .css takes in the location markers' name from the mapAPI and will display unrenderd images when offline*/
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
 
