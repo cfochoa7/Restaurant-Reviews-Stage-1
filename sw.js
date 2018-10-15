@@ -10,6 +10,11 @@ let urls = [
   '/js/main.js',
   '/js/restaurant_info.js',
   '/data/restaurants.json',
+
+  /*The .js & .css takes in the locations markers' name from the mapAPI and will display unrenderd images when offline*/
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
+
   '/img/1.jpg',
   '/img/2.jpg',
   '/img/3.jpg',
@@ -48,8 +53,25 @@ self.addEventListener('fetch', function(event) {
         if (response) {
           return response;
         }
-        return fetch(event.request);
-      }
-    )
-  );
+
+        var fetchRequest = event.request.clone();
+
+        return fetch(fetchRequest).then(
+          function(response) {
+            if(!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+
+            var responseToCache = response.clone();
+
+            caches.open(cacheName)
+              .then(function(cache) {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          }
+        );
+      })
+    );
 });
