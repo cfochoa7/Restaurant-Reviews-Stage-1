@@ -1,8 +1,5 @@
-# Mobile Web Specialist Certification Course
+# Restaurant-Reviews-Stage-1
 ---
-#### _Three Stage Course Material Project - Restaurant Reviews_
-
-## Project Overview: Stage 1
 
 In this project the website is inserted with a service worker that will record and store cache items that will show the proper
 display during offline activity. 
